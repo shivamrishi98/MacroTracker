@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		96EF02AC2C6CC06400A27E3E /* MacroTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */; };
-		96EF02AE2C6CC06400A27E3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02AD2C6CC06400A27E3E /* ContentView.swift */; };
 		96EF02B02C6CC06400A27E3E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02AF2C6CC06400A27E3E /* Item.swift */; };
 		96EF02B22C6CC06500A27E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF02B12C6CC06500A27E3E /* Assets.xcassets */; };
 		96EF02B52C6CC06500A27E3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF02B42C6CC06500A27E3E /* Preview Assets.xcassets */; };
+		96EF02BC2C6CC09200A27E3E /* MacroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02BB2C6CC09200A27E3E /* MacroView.swift */; };
+		96EF02BE2C6CC59700A27E3E /* MacroItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02BD2C6CC59700A27E3E /* MacroItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		96EF02A82C6CC06400A27E3E /* MacroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroTrackerApp.swift; sourceTree = "<group>"; };
-		96EF02AD2C6CC06400A27E3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96EF02AF2C6CC06400A27E3E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		96EF02B12C6CC06500A27E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96EF02B42C6CC06500A27E3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96EF02BB2C6CC09200A27E3E /* MacroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroView.swift; sourceTree = "<group>"; };
+		96EF02BD2C6CC59700A27E3E /* MacroItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */,
-				96EF02AD2C6CC06400A27E3E /* ContentView.swift */,
+				96EF02BB2C6CC09200A27E3E /* MacroView.swift */,
 				96EF02AF2C6CC06400A27E3E /* Item.swift */,
 				96EF02B12C6CC06500A27E3E /* Assets.xcassets */,
 				96EF02B32C6CC06500A27E3E /* Preview Content */,
+				96EF02BD2C6CC59700A27E3E /* MacroItemView.swift */,
 			);
 			path = MacroTracker;
 			sourceTree = "<group>";
@@ -140,8 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96EF02AE2C6CC06400A27E3E /* ContentView.swift in Sources */,
 				96EF02B02C6CC06400A27E3E /* Item.swift in Sources */,
+				96EF02BC2C6CC09200A27E3E /* MacroView.swift in Sources */,
+				96EF02BE2C6CC59700A27E3E /* MacroItemView.swift in Sources */,
 				96EF02AC2C6CC06400A27E3E /* MacroTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
