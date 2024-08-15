@@ -51,6 +51,13 @@ struct MacroView: View {
                 }
             }
         }
+        .task {
+            do {
+//                try await OpenAIService.shared.sendPromptToChatGPT(message: "indian yellow dal 100g")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
