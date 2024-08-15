@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9628EBC02C6DDF9900AD8EF9 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628EBBF2C6DDF9900AD8EF9 /* OpenAIService.swift */; };
-		9628EBC22C6DE1CC00AD8EF9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628EBC12C6DE1CC00AD8EF9 /* Secrets.swift */; };
+		9628EBC82C6E2AD300AD8EF9 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628EBC72C6E2AD200AD8EF9 /* Secrets.swift */; };
 		96EF02AC2C6CC06400A27E3E /* MacroTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */; };
 		96EF02B02C6CC06400A27E3E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02AF2C6CC06400A27E3E /* Item.swift */; };
 		96EF02B22C6CC06500A27E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF02B12C6CC06500A27E3E /* Assets.xcassets */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		9628EBBF2C6DDF9900AD8EF9 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
-		9628EBC12C6DE1CC00AD8EF9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		9628EBC72C6E2AD200AD8EF9 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		96EF02A82C6CC06400A27E3E /* MacroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroTrackerApp.swift; sourceTree = "<group>"; };
 		96EF02AF2C6CC06400A27E3E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 				96EF02BD2C6CC59700A27E3E /* MacroItemView.swift */,
 				96EF02AF2C6CC06400A27E3E /* Item.swift */,
 				9628EBBF2C6DDF9900AD8EF9 /* OpenAIService.swift */,
-				9628EBC12C6DE1CC00AD8EF9 /* Secrets.swift */,
+				9628EBC72C6E2AD200AD8EF9 /* Secrets.swift */,
 				96EF02B12C6CC06500A27E3E /* Assets.xcassets */,
 				96EF02B32C6CC06500A27E3E /* Preview Content */,
 			);
@@ -150,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EF02B02C6CC06400A27E3E /* Item.swift in Sources */,
-				9628EBC22C6DE1CC00AD8EF9 /* Secrets.swift in Sources */,
+				9628EBC82C6E2AD300AD8EF9 /* Secrets.swift in Sources */,
 				96EF02BC2C6CC09200A27E3E /* MacroView.swift in Sources */,
 				9628EBC02C6DDF9900AD8EF9 /* OpenAIService.swift in Sources */,
 				96EF02BE2C6CC59700A27E3E /* MacroItemView.swift in Sources */,
