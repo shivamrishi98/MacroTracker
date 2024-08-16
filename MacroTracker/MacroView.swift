@@ -13,6 +13,9 @@ struct MacroView: View {
     @State var fats = 40
     @State var proteins = 80
     
+    @State var showTextfield = false
+    @State var food = ""
+    
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
@@ -39,23 +42,33 @@ struct MacroView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             }
             .scrollIndicators(.hidden)
+            .alert("MacroTracker", isPresented: $showTextfield, actions: {
+                TextField("Food", text: $food)
+                
+                Button("Cancel", role: .cancel, action:{})
+                Button("Done") {
+                    Task {
+                        do {
+                            print("food")
+//                            try await OpenAIService.shared.sendPromptToChatGPT(message: food)
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            }, message: {
+                Text("Please enter the meal you want to track")
+            })
             .toolbar {
                 ToolbarItem {
                     
                     Button {
-                        print("Add")
+                        showTextfield = true
                     } label: {
                         Image(systemName: "plus")
                             .foregroundStyle(.black)
                     }
                 }
-            }
-        }
-        .task {
-            do {
-//                try await OpenAIService.shared.sendPromptToChatGPT(message: "indian yellow dal 100g")
-            } catch {
-                print(error.localizedDescription)
             }
         }
     }

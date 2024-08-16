@@ -78,6 +78,7 @@ class OpenAIService {
             throw URLError(.badURL)
         }
         let macro = try JSONDecoder().decode(MacroResponse.self, from: argData)
+        print(macro)
     }
     
 }
