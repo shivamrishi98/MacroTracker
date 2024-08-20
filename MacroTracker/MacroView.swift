@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MacroView: View {
-    
+
     @State var carbs = 10
     @State var fats = 40
     @State var proteins = 80
+    
+    @Query var macros: [Macro] = []
     
     @State var showTextfield = false
     @State var food = ""
@@ -42,23 +45,6 @@ struct MacroView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             }
             .scrollIndicators(.hidden)
-            .alert("MacroTracker", isPresented: $showTextfield, actions: {
-                TextField("Food", text: $food)
-                
-                Button("Cancel", role: .cancel, action:{})
-                Button("Done") {
-                    Task {
-                        do {
-                            print("food")
-//                            try await OpenAIService.shared.sendPromptToChatGPT(message: food)
-                        } catch {
-                            print(error.localizedDescription)
-                        }
-                    }
-                }
-            }, message: {
-                Text("Please enter the meal you want to track")
-            })
             .toolbar {
                 ToolbarItem {
                     
@@ -69,6 +55,10 @@ struct MacroView: View {
                             .foregroundStyle(.black)
                     }
                 }
+            }
+            .sheet(isPresented: $showTextfield) {
+                AddMacroView()
+                    .presentationDetents([.fraction(0.4)])
             }
         }
     }

@@ -28,7 +28,7 @@ struct GPTFunctionCall: Decodable {
     let arguments: String
 }
 
-struct MacroResponse: Decodable {
+struct MacroResult: Decodable {
     let food: String
     let fats: Int
     let protein: Int

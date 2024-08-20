@@ -65,7 +65,7 @@ class OpenAIService {
         return urlRequest
     }
     
-    func sendPromptToChatGPT(message: String) async throws {
+    func sendPromptToChatGPT(message: String) async throws -> MacroResult {
         let urlRequest = try generateURLRequest(httpMethod: .post,
                                             message: message)
         
@@ -77,8 +77,8 @@ class OpenAIService {
         guard let argData = args.data(using: .utf8) else {
             throw URLError(.badURL)
         }
-        let macro = try JSONDecoder().decode(MacroResponse.self, from: argData)
-        print(macro)
+        let macro = try JSONDecoder().decode(MacroResult.self, from: argData)
+        return macro
     }
     
 }
