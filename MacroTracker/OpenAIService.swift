@@ -14,6 +14,11 @@ enum HttpMethod: String {
     case get = "GET"
 }
 
+enum OpenAIError: Error {
+    case noFunctionCall
+    case unableToConvertStringIntoData
+}
+
 class OpenAIService {
     
     static let shared = OpenAIService()
@@ -72,14 +77,16 @@ class OpenAIService {
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
         
         let result = try JSONDecoder().decode(GPTResponse.self, from: data)
-        let args = result.choices[0].message.functionCall.arguments
         
-        guard let argData = args.data(using: .utf8) else {
-            throw URLError(.badURL)
+        guard let functionCall = result.choices[0].message.functionCall else {
+            throw OpenAIError.unableToConvertStringIntoData
+        }
+        
+        guard let argData = functionCall.arguments.data(using: .utf8) else {
+            throw OpenAIError.unableToConvertStringIntoData
         }
         let macro = try JSONDecoder().decode(MacroResult.self, from: argData)
         return macro
     }
-    
 }
 

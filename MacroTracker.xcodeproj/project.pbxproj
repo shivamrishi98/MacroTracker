@@ -15,6 +15,7 @@
 		96A9FDEA2C74438600861699 /* AddMacroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FDE92C74438600861699 /* AddMacroView.swift */; };
 		96A9FDEE2C744F2D00861699 /* MacroDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FDED2C744F2D00861699 /* MacroDayView.swift */; };
 		96A9FDF02C7452FA00861699 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FDEF2C7452FA00861699 /* Date+Ext.swift */; };
+		96A9FDF22C74663100861699 /* DailyMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9FDF12C74663100861699 /* DailyMacro.swift */; };
 		96EF02AC2C6CC06400A27E3E /* MacroTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */; };
 		96EF02B22C6CC06500A27E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF02B12C6CC06500A27E3E /* Assets.xcassets */; };
 		96EF02B52C6CC06500A27E3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EF02B42C6CC06500A27E3E /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		96A9FDE92C74438600861699 /* AddMacroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMacroView.swift; sourceTree = "<group>"; };
 		96A9FDED2C744F2D00861699 /* MacroDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroDayView.swift; sourceTree = "<group>"; };
 		96A9FDEF2C7452FA00861699 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		96A9FDF12C74663100861699 /* DailyMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMacro.swift; sourceTree = "<group>"; };
 		96EF02A82C6CC06400A27E3E /* MacroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroTrackerApp.swift; sourceTree = "<group>"; };
 		96EF02B12C6CC06500A27E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				96405F042C6F861200455839 /* RequestModels.swift */,
 				96A9FDE72C74405D00861699 /* Macro.swift */,
 				96405F062C6F890E00455839 /* ResponseModels.swift */,
+				96A9FDF12C74663100861699 /* DailyMacro.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				96A9FDEA2C74438600861699 /* AddMacroView.swift in Sources */,
 				96A9FDF02C7452FA00861699 /* Date+Ext.swift in Sources */,
 				96A9FDEE2C744F2D00861699 /* MacroDayView.swift in Sources */,
+				96A9FDF22C74663100861699 /* DailyMacro.swift in Sources */,
 				96EF02AC2C6CC06400A27E3E /* MacroTrackerApp.swift in Sources */,
 				96A9FDE82C74405D00861699 /* Macro.swift in Sources */,
 				96405F052C6F861200455839 /* RequestModels.swift in Sources */,

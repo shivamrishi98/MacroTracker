@@ -8,20 +8,11 @@
 import SwiftUI
 import SwiftData
 
-struct DailyMacro: Identifiable {
-    let id = UUID()
-    let date: Date
-    let carbs: Int
-    let fats: Int
-    let protein: Int
-}
-
-
 struct MacroView: View {
 
-    @State var carbs = 10
-    @State var fats = 40
-    @State var proteins = 80
+    @State var carbs = 0
+    @State var fats = 0
+    @State var proteins = 0
     
     @Query() var macros: [Macro] = []
     @State var dailyMacros = [DailyMacro]()
@@ -72,9 +63,11 @@ struct MacroView: View {
             }
             .onAppear {
                 fetchDailyMacros()
+                fetchTodaysMacros()
             }
             .onChange(of: macros) { _, _ in
                 fetchDailyMacros()
+                fetchTodaysMacros()
             }
         }
     }
@@ -93,6 +86,15 @@ struct MacroView: View {
             dailyMacros.append(macro)
         }
         self.dailyMacros = dailyMacros.sorted(by: { $0.date > $1.date })
+    }
+    
+    private func fetchTodaysMacros() {
+        if let firstDateMacro = dailyMacros.first,
+           Calendar.current.startOfDay(for: firstDateMacro.date) == Calendar.current.startOfDay(for: .now) {
+            carbs = firstDateMacro.carbs
+            fats = firstDateMacro.fats
+            proteins = firstDateMacro.protein
+        }
     }
 }
 

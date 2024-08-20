@@ -16,7 +16,7 @@ struct GPTCompletion: Decodable {
 }
 
 struct GPTResponseMessage: Decodable {
-    let functionCall: GPTFunctionCall
+    let functionCall: GPTFunctionCall?
     
     enum CodingKeys: String, CodingKey {
         case functionCall = "function_call"
