@@ -15,58 +15,27 @@ struct MacroDayView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(macro.date.monthAndYear)
-                    .font(.title3)
+                    .font(.body)
                 
                 Text(macro.date.dayAndTime)
                     .font(.caption)
             }
             .frame(width:60)
-             
+            
             Spacer()
             
             HStack {
-                VStack {
-                    Image("carb")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Text("Carbs")
-                    
-                    Text("\(macro.carbs) g")
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.gray.opacity(0.1))
-                )
-                VStack {
-                    Image("fats")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Text("Fats")
-                    
-                    Text("\(macro.fats) g")
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.gray.opacity(0.1))
-                )
-                VStack {
-                    Image("proteins")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Text("Protein")
-                    
-                    Text("\(macro.protein) g")
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.gray.opacity(0.1))
-                )
+                MacroTitleView(titleName: "Carbs",
+                               imageName: "carb",
+                               value: macro.carbs)
+                
+                MacroTitleView(titleName: "Fats",
+                               imageName: "fats",
+                               value: macro.fats)
+                
+                MacroTitleView(titleName: "Protein",
+                               imageName: "proteins",
+                               value: macro.protein)
             }
             Spacer()
         }

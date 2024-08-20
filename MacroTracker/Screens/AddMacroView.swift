@@ -86,7 +86,7 @@ struct AddMacroView: View {
         dismiss()
         let macro = Macro(food: result.food,
                           createdAt: .now,
-                          date: .now,
+                          date: date,
                           carbs: result.carbs,
                           fats: result.fats,
                           protein: result.protein)

@@ -16,55 +16,22 @@ struct MacroHeaderView: View {
     var body: some View {
         HStack {
             Spacer()
-            VStack {
-                Image("carb")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60)
-                
-                Text("Carbs")
-                
-                Text("\(carbs) g")
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.gray.opacity(0.1))
-            )
+            
+            MacroTitleView(titleName: "Carbs",
+                           imageName: "carb",
+                           value: carbs)
             
             Spacer()
-            VStack {
-                Image("fats")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60)
-                
-                Text("Fats")
-                
-                Text("\(fats) g")
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.gray.opacity(0.1))
-            )
+        
+            MacroTitleView(titleName: "Fats",
+                           imageName: "fats",
+                           value: fats)
             
             Spacer()
-            VStack {
-                Image("proteins")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60)
-                
-                Text("Protein")
-                
-                Text("\(proteins) g")
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.gray.opacity(0.1))
-            )
+            
+            MacroTitleView(titleName: "Protein",
+                           imageName: "proteins",
+                           value: proteins)
             
             Spacer()
         }
@@ -73,4 +40,28 @@ struct MacroHeaderView: View {
 
 #Preview {
     MacroHeaderView(carbs: 0, fats: 0, proteins: 0)
+}
+
+struct MacroTitleView: View {
+    
+    let titleName: String
+    let imageName: String
+    let value: Int
+    
+    var body: some View {
+        VStack {
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+    
+            Text(titleName)
+            
+            Text("\(value) g")
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(.gray.opacity(0.1))
+        )
+    }
 }

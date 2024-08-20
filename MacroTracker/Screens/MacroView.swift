@@ -74,8 +74,8 @@ struct MacroView: View {
     
     private func fetchDailyMacros() {
         let dates: Set<Date> = Set(macros.map({ Calendar.current.startOfDay(for: $0.date) }))
-        
         var dailyMacros = [DailyMacro]()
+        
         for date in dates {
             let filteredMacros = macros.filter({ Calendar.current.startOfDay(for:  $0.date ) == date })
             let carbs: Int = filteredMacros.reduce(0, { $0 + $1.carbs })
