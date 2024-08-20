@@ -8,13 +8,23 @@
 import SwiftUI
 import SwiftData
 
+struct DailyMacro: Identifiable {
+    let id = UUID()
+    let date: Date
+    let carbs: Int
+    let fats: Int
+    let protein: Int
+}
+
+
 struct MacroView: View {
 
     @State var carbs = 10
     @State var fats = 40
     @State var proteins = 80
     
-    @Query var macros: [Macro] = []
+    @Query() var macros: [Macro] = []
+    @State var dailyMacros = [DailyMacro]()
     
     @State var showTextfield = false
     @State var food = ""
@@ -27,17 +37,17 @@ struct MacroView: View {
                         .font(.title)
                         .padding()
                     
-                    MacroItemView(carbs: $carbs, fats: $fats, proteins: $proteins)
+                    MacroHeaderView(carbs: $carbs, fats: $fats, proteins: $proteins)
                         .padding()
                     
                     VStack(alignment: .leading) {
                         Text("Previous Meals")
                             .font(.title)
                         
-                        ForEach(0..<10) { _ in
-                            MacroItemView(carbs: .constant(Int.random(in: 10..<200)),
-                                          fats: .constant(Int.random(in: 10..<200)),
-                                          proteins: .constant(Int.random(in: 10..<200)))
+                        ForEach(dailyMacros) { macro in
+                            HStack {
+                                MacroDayView(macro: macro)
+                            }
                         }
                     }
                     .padding()
@@ -60,7 +70,29 @@ struct MacroView: View {
                 AddMacroView()
                     .presentationDetents([.fraction(0.4)])
             }
+            .onAppear {
+                fetchDailyMacros()
+            }
+            .onChange(of: macros) { _, _ in
+                fetchDailyMacros()
+            }
         }
+    }
+    
+    private func fetchDailyMacros() {
+        let dates: Set<Date> = Set(macros.map({ Calendar.current.startOfDay(for: $0.date) }))
+        
+        var dailyMacros = [DailyMacro]()
+        for date in dates {
+            let filteredMacros = macros.filter({ Calendar.current.startOfDay(for:  $0.date ) == date })
+            let carbs: Int = filteredMacros.reduce(0, { $0 + $1.carbs })
+            let fats: Int = filteredMacros.reduce(0, { $0 + $1.fats })
+            let protein: Int = filteredMacros.reduce(0, { $0 + $1.protein })
+            
+            let macro = DailyMacro(date: date, carbs: carbs, fats: fats, protein: protein)
+            dailyMacros.append(macro)
+        }
+        self.dailyMacros = dailyMacros.sorted(by: { $0.date > $1.date })
     }
 }
 

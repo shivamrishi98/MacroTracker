@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MacroItemView: View {
+struct MacroHeaderView: View {
     
     @Binding var carbs: Int
     @Binding var fats: Int
@@ -72,5 +72,5 @@ struct MacroItemView: View {
 }
 
 #Preview {
-    MacroItemView(carbs: .constant(10), fats: .constant(82), proteins: .constant(120))
+    MacroHeaderView(carbs: .constant(10), fats: .constant(82), proteins: .constant(120))
 }
