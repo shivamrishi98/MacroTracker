@@ -83,6 +83,7 @@ struct AddMacroView: View {
     }
     
     private func saveMacro(_ result: MacroResult) {
+        dismiss()
         let macro = Macro(food: result.food,
                           createdAt: .now,
                           date: .now,

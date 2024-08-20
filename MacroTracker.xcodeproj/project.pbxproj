@@ -63,6 +63,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		96A9FDF32C7488D300861699 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				96A9FDE92C74438600861699 /* AddMacroView.swift */,
+				96EF02BB2C6CC09200A27E3E /* MacroView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		96EF029F2C6CC06400A27E3E = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +91,9 @@
 		96EF02AA2C6CC06400A27E3E /* MacroTracker */ = {
 			isa = PBXGroup;
 			children = (
+				96A9FDF32C7488D300861699 /* Screens */,
 				96A9FDEB2C74438900861699 /* Models */,
 				96EF02AB2C6CC06400A27E3E /* MacroTrackerApp.swift */,
-				96EF02BB2C6CC09200A27E3E /* MacroView.swift */,
-				96A9FDE92C74438600861699 /* AddMacroView.swift */,
 				96A9FDEF2C7452FA00861699 /* Date+Ext.swift */,
 				96EF02BD2C6CC59700A27E3E /* MacroHeaderView.swift */,
 				96A9FDED2C744F2D00861699 /* MacroDayView.swift */,

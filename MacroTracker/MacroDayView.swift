@@ -13,13 +13,15 @@ struct MacroDayView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .center) {
+            VStack(alignment: .leading) {
                 Text(macro.date.monthAndYear)
                     .font(.title3)
                 
                 Text(macro.date.dayAndTime)
+                    .font(.caption)
             }
-            .frame(width: 80, alignment: .center)
+            .frame(width:60)
+             
             Spacer()
             
             HStack {
@@ -27,7 +29,6 @@ struct MacroDayView: View {
                     Image("carb")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 60)
                     
                     Text("Carbs")
                     
@@ -42,7 +43,6 @@ struct MacroDayView: View {
                     Image("fats")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 60)
                     
                     Text("Fats")
                     
@@ -57,7 +57,6 @@ struct MacroDayView: View {
                     Image("proteins")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 60)
                     
                     Text("Protein")
                     
@@ -71,6 +70,7 @@ struct MacroDayView: View {
             }
             Spacer()
         }
+        .padding(5)
     }
 }
 

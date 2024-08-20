@@ -25,10 +25,10 @@ struct MacroView: View {
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
                     Text("Today's Macros")
-                        .font(.title)
+                        .font(.largeTitle)
                         .padding()
                     
-                    MacroHeaderView(carbs: $carbs, fats: $fats, proteins: $proteins)
+                    MacroHeaderView(carbs: carbs, fats: fats, proteins: proteins)
                         .padding()
                     
                     VStack(alignment: .leading) {

@@ -9,9 +9,9 @@ import SwiftUI
 
 struct MacroHeaderView: View {
     
-    @Binding var carbs: Int
-    @Binding var fats: Int
-    @Binding var proteins: Int
+    var carbs: Int
+    var fats: Int
+    var proteins: Int
     
     var body: some View {
         HStack {
@@ -72,5 +72,5 @@ struct MacroHeaderView: View {
 }
 
 #Preview {
-    MacroHeaderView(carbs: .constant(10), fats: .constant(82), proteins: .constant(120))
+    MacroHeaderView(carbs: 0, fats: 0, proteins: 0)
 }
